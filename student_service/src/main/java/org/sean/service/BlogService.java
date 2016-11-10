@@ -15,7 +15,7 @@ public class BlogService {
     @Autowired
     private BlogMapper mapper;
 
-    public void show(String blogId){
+    public String show(String blogId){
         BlogDto blog = mapper.selectById(blogId);
         System.out.println("当前正在访问博客 - "+blog.getTitle());
         System.out.println("博客ID："+blog.getId());
@@ -43,6 +43,6 @@ public class BlogService {
                 System.out.println("\n");
             }
         }
-
+        return blog.getTitle();
     }
 }
